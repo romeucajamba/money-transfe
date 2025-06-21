@@ -48,5 +48,62 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+📌 Endpoints Principais
+A documentação da API é gerada automaticamente em:
+http://localhost:8000/api/docs
+
+Exemplos de rotas:
+POST /api/users/ – Cadastro de usuário
+
+POST /api/deposit/ – Depositar valores na conta do usuário
+
+POST /api/transfer/ – Realizar transferência de dinheiro
+
+GET /api/wallets/{user_id}/ – Ver saldo da carteira
+
+✅ Regras de Negócio
+CPF/CNPJ e e-mail devem ser únicos no sistema
+
+Lojistas não podem transferir dinheiro
+
+Toda transferência:
+
+Valida se o remetente tem saldo
+
+Consulta serviço de autorização externa:
+
+https://run.mocky.io/v3/5794d450-d2e2-4412-8131-73d0293ac1cc
+
+Notifica o destinatário via serviço externo (simulado):
+
+https://run.mocky.io/v3/54dc2cf1-3add-45b5-b5a9-6bf7e7f1f4a6
+
+É feita dentro de uma transação atômica: falhas revertem a operação
+
+📂 Estrutura do Projeto
+
+.
+├── core/                   # Lógica de negócio
+├── users/                  # Cadastro e autenticação de usuários
+├── transactions/           # Transferências e validações
+├── manage.py
+└── requirements.txt
+
+⚠️ Tratamento de Erros
+Retorno de erros padronizados para:
+
+Saldo insuficiente
+
+Tentativa de transferência por lojista
+
+CPF/CNPJ ou e-mail duplicado
+
+Falha no serviço autorizador externo
+
+Falha no envio de notificação (sem afetar a transação)
+
+🧑‍💻 Autor
+Projeto desenvolvido por [Seu Nome] – contato: [seu-email@email.com]
 
 
+Acessar http://localhost:8000/api/docs para visualizar e testar as rotas
