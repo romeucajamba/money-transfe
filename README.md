@@ -16,7 +16,7 @@ Este projeto é uma API RESTful desenvolvida com **Django**, **Python** e **Djan
 
 ## 🛠 Tecnologias Utilizadas
 
-- Python 3.10+
+- Python 3.13.3
 - Django 4.x
 - Django Ninja (FastAPI-like para Django)
 - SQLite (ou qualquer outro banco suportado pelo Django)
@@ -58,8 +58,6 @@ POST /api/users/ – Cadastro de usuário
 POST /api/deposit/ – Depositar valores na conta do usuário
 
 POST /api/transfer/ – Realizar transferência de dinheiro
-
-GET /api/wallets/{user_id}/ – Ver saldo da carteira
 
 ✅ Regras de Negócio
 CPF/CNPJ e e-mail devem ser únicos no sistema
@@ -103,7 +101,7 @@ Falha no serviço autorizador externo
 Falha no envio de notificação (sem afetar a transação)
 
 🧑‍💻 Autor
-Projeto desenvolvido por [Seu Nome] – contato: [seu-email@email.com]
+Projeto desenvolvido por [Romeu Cajamba] – contato: [romeucajambl@email.com]
 
 
 Acessar http://localhost:8000/api/docs para visualizar e testar as rotas
