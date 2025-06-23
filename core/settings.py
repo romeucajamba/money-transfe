@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
     'rolepermissions',
     'ninja',
+    'django-q'
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -128,3 +129,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHORIZE_TRANSFERE_ENDPOINT = "https://run.mocky.io/v3/982c6f8f-6c14-445d-be0a-a08db4c8813b"
+
+Q_CLUSTER = {
+    'name': 'DjangoQ',
+    'workers': 4,
+    'timeout': 60,
+    'bulk': 10,
+    'orm': 'default',
+    'retry': 120,
+}
