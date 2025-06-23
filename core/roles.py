@@ -7,7 +7,7 @@ class People(AbstractUserRole):
         'rceive_transfer': True
     }
 
-class Compay(AbstractUserRole):
+class Company(AbstractUserRole):
     avaliable_permissions = {
         'make_transfer': False,
         'rceive_transfer': True
